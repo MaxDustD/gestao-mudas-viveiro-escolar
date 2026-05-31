@@ -1,0 +1,3 @@
+# Exercício enunciado
+
+Desenvolva um sistema para controle de produção de mudas em um viveiro escolar. O sistema deve permitir o cadastro de espécies, lotes de mudas, canteiros, responsáveis, cuidados e retiradas. Cada lote deve possuir espécie, quantidade inicial, quantidade disponível, data de plantio, canteiro e status. O sistema deve permitir registrar cuidados, acompanhar desenvolvimento, retirar mudas para doação ou plantio e consultar disponibilidade por espécie. A aplicação deve impedir retirada acima da quantidade disponível, lote sem canteiro, cuidado registrado em lote encerrado e encerramento de lote com quantidade disponível sem justificativa.
