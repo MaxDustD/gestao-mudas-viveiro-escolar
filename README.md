@@ -133,9 +133,43 @@ O projeto segue uma separação simples entre camadas:
 - `Consultas` - consulta de disponibilidade por espécie e listagem de lotes ativos.
 
 ## Observações
+- **Persistência:** os dados são armazenados em memória; ao fechar o aplicativo, os registros são perdidos.
 
-- Os dados são armazenados em memória; ao fechar o aplicativo, os registros são perdidos.
-- A aplicação web utiliza `launchSettings.json` para configurar `http://localhost:5000`.
-- Para liberar a porta 5000, feche qualquer instância ativa do app ou reinicie o servidor.
+- **Configuração de portas:** a aplicação web utiliza `launchSettings.json` para configurar `http://localhost:5000` e `https://localhost:5001` por padrão. Se a porta estiver em uso, a aplicação não iniciará. Para resolver:
+  - Pare o servidor em execução (no terminal onde está rodando, use Ctrl+C).
+  - Encontre o PID que ocupa a porta e finalize-o (PowerShell):
 
+```powershell
+netstat -ano | findstr ":5000"
+Get-Process -Id <PID> | Select-Object Id,ProcessName,Path
+Stop-Process -Id <PID> -Force
+```
+
+  - Ou execute em portas alternativas:
+
+```powershell
+dotnet run --project src/ViveiroEscolar.Web --urls "http://localhost:5005;https://localhost:5006"
+# ou com watch
+$env:ASPNETCORE_URLS="http://localhost:5005;https://localhost:5006"; dotnet watch --project src/ViveiroEscolar.Web
+```
+
+- **Certificado HTTPS de desenvolvimento:** se o HTTPS local não for confiável, rode:
+
+```powershell
+dotnet dev-certs https --trust
+```
+
+- **Lock de arquivos durante build/watch:** evite múltiplas instâncias do mesmo projeto. Caso veja erros de "file is being used by another process", finalize o processo que está rodando o app (Ctrl+C ou `Stop-Process`).
+
+- **Script de conveniência:** existe um script `scripts/run-watch.ps1` que mata qualquer processo que esteja usando a porta especificada e inicia `dotnet watch` (padrão `5000`). Exemplo de uso:
+
+```powershell
+# roda watcher padrão na porta 5000
+.\scripts\run-watch.ps1
+
+# roda watcher em portas alternativas
+#.\scripts\run-watch.ps1 -HttpPort 5005 -HttpsPort 5006
+```
+
+---
 ---
