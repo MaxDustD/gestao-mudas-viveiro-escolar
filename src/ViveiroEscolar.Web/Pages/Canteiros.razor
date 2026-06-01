@@ -1,0 +1,60 @@
+@page "/canteiros"
+@inject ViveiroApplicationService Service
+@using ViveiroEscolar.Library.Domain.Exceptions
+
+<h2>Canteiros</h2>
+
+<div class="grid">
+  <div class="box">
+    <h3>Lista de Canteiros</h3>
+    <table class="table">
+      <thead><tr><th>Nome</th><th>Descrição</th><th>Localização</th></tr></thead>
+      <tbody>
+        @foreach (var c in canteiros)
+        {
+          <tr><td>@c.Nome</td><td>@(c.Descricao ?? "-")</td><td>@(c.Localizacao ?? "-")</td></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box">
+    <h3>Cadastrar Canteiro</h3>
+    @if (!string.IsNullOrEmpty(error))
+    {
+      <div class="error">@error</div>
+    }
+    @if (!string.IsNullOrEmpty(success))
+    {
+      <div class="success">@success</div>
+    }
+    <div class="form-row"><label>Nome</label><input @bind="nome" /></div>
+    <div class="form-row"><label>Descrição</label><input @bind="descricao" /></div>
+    <div class="form-row"><label>Localização</label><input @bind="localizacao" /></div>
+    <div class="form-actions"><button class="btn" @onclick="Adicionar">Adicionar</button></div>
+  </div>
+</div>
+
+@code {
+  List<Canteiro> canteiros = new();
+  string nome = string.Empty;
+  string? descricao = null;
+  string? localizacao = null;
+  string error = string.Empty;
+  string success = string.Empty;
+
+  protected override void OnInitialized() => Load();
+  void Load() => canteiros = Service.ListarCanteiros().ToList();
+
+  void Adicionar()
+  {
+    try
+    {
+      Service.AdicionarCanteiro(new Canteiro(Guid.NewGuid(), nome, descricao, localizacao));
+      nome = descricao = localizacao = string.Empty;
+      error = string.Empty; success = "Canteiro cadastrado.";
+      Load();
+    }
+    catch (DomainException ex) { error = ex.Message; success = string.Empty; }
+  }
+}

@@ -1,0 +1,55 @@
+@page "/responsaveis"
+@inject ViveiroApplicationService Service
+@using ViveiroEscolar.Library.Domain.Exceptions
+
+<h2>Responsáveis</h2>
+
+<div class="grid">
+  <div class="box">
+    <h3>Lista de Responsáveis</h3>
+    <table class="table">
+      <thead><tr><th>Nome</th><th>Contato</th><th>Função</th></tr></thead>
+      <tbody>
+        @foreach (var r in responsaveis)
+        {
+          <tr><td>@r.Nome</td><td>@r.Contato</td><td>@(r.Funcao ?? "-")</td></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box">
+    <h3>Cadastrar Responsável</h3>
+    @if (!string.IsNullOrEmpty(error))
+    {
+      <div class="error">@error</div>
+    }
+    @if (!string.IsNullOrEmpty(success))
+    {
+      <div class="success">@success</div>
+    }
+    <div class="form-row"><label>Nome</label><input @bind="nome" /></div>
+    <div class="form-row"><label>Contato</label><input @bind="contato" /></div>
+    <div class="form-row"><label>Função</label><input @bind="funcao" /></div>
+    <div class="form-actions"><button class="btn" @onclick="Adicionar">Adicionar</button></div>
+  </div>
+</div>
+
+@code {
+  List<Responsavel> responsaveis = new();
+  string nome = string.Empty; string contato = string.Empty; string? funcao = null;
+  string error = string.Empty; string success = string.Empty;
+
+  protected override void OnInitialized() => Load();
+  void Load() => responsaveis = Service.ListarResponsaveis().ToList();
+
+  void Adicionar()
+  {
+    try
+    {
+      Service.AdicionarResponsavel(new Responsavel(Guid.NewGuid(), nome, contato, funcao));
+      nome = contato = funcao = string.Empty; error = string.Empty; success = "Responsável cadastrado."; Load();
+    }
+    catch (DomainException ex) { error = ex.Message; success = string.Empty; }
+  }
+}

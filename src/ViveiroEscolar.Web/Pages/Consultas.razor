@@ -1,0 +1,36 @@
+@page "/consultas"
+@inject ViveiroApplicationService Service
+
+<h2>Consultas</h2>
+
+<div class="grid">
+  <div class="box">
+    <h3>Disponibilidade por Espécie</h3>
+    @if (!disponibilidade.Any()) { <div>Sem registros.</div> }
+    <ul>
+      @foreach(var d in disponibilidade) { <li>@d.NomeComum (@d.NomeCientifico) — Disponível: @d.QuantidadeDisponivel</li> }
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>Lotes Ativos</h3>
+    @if (!lotes.Any()) { <div>Sem lotes ativos.</div> }
+    <table class="table">
+      <thead><tr><th>Id</th><th>Espécie</th><th>Canteiro</th><th>Disponível</th></tr></thead>
+      <tbody>
+        @foreach(var l in lotes) { <tr><td class="mono">@l.Id</td><td>@l.EspecieId</td><td>@l.CanteiroId</td><td>@l.QuantidadeDisponivel</td></tr> }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+@code {
+  List<dynamic> disponibilidade = new();
+  List<ViveiroEscolar.Library.Domain.Entities.LoteMudas> lotes = new();
+
+  protected override void OnInitialized()
+  {
+    disponibilidade = Service.ConsultarDisponibilidadePorEspecie().Cast<dynamic>().ToList();
+    lotes = Service.ListarLotesAtivos().ToList();
+  }
+}

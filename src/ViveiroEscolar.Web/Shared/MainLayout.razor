@@ -1,0 +1,22 @@
+@inherits LayoutComponentBase
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">Viveiro Escolar</div>
+    <NavMenu />
+  </aside>
+  <main class="main">
+    <header class="page-header">
+      <h1>@(PageTitle ?? "Painel")</h1>
+    </header>
+    <div class="content">
+      <div class="box">
+        @Body
+      </div>
+    </div>
+  </main>
+</div>
+
+@code {
+  [CascadingParameter(Name = "PageTitle")] public string? PageTitle { get; set; }
+}

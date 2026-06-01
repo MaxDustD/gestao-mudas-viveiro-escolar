@@ -1,0 +1,93 @@
+@page "/lotes"
+@inject ViveiroApplicationService Service
+@using ViveiroEscolar.Library.Domain.Exceptions
+
+<h2>Lotes</h2>
+
+<div class="grid">
+  <div class="box">
+    <h3>Lista de Lotes</h3>
+    <table class="table">
+      <thead><tr><th>Id</th><th>Espécie</th><th>Canteiro</th><th>Inicial</th><th>Disponível</th><th>Status</th></tr></thead>
+      <tbody>
+        @foreach (var l in lotes)
+        {
+          <tr>
+            <td class="mono">@l.Id</td>
+            <td>@l.EspecieId</td>
+            <td>@l.CanteiroId</td>
+            <td>@l.QuantidadeInicial</td>
+            <td>@l.QuantidadeDisponivel</td>
+            <td>@l.Status</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box">
+    <h3>Criar Lote</h3>
+    @if (!string.IsNullOrEmpty(error))
+    {
+      <div class="error">@error</div>
+    }
+    @if (!string.IsNullOrEmpty(success))
+    {
+      <div class="success">@success</div>
+    }
+
+    <div class="form-row"><label>Espécie</label>
+      <select @bind="especieId">
+        <option value="">-- selecione --</option>
+        @foreach(var e in especies) { <option value="@e.Id">@e.NomeComum</option> }
+      </select>
+    </div>
+    <div class="form-row"><label>Canteiro</label>
+      <select @bind="canteiroId">
+        <option value="">-- selecione --</option>
+        @foreach(var c in canteiros) { <option value="@c.Id">@c.Nome</option> }
+      </select>
+    </div>
+    <div class="form-row"><label>Quantidade inicial</label><input type="number" @bind="quantidadeInicial" /></div>
+    <div class="form-row"><label>Data plantio</label><input type="date" @bind="dataPlantio" /></div>
+    <div class="form-row"><label>Responsável (opcional)</label>
+      <select @bind="responsavelId">
+        <option value="">-- nenhum --</option>
+        @foreach(var r in responsaveis) { <option value="@r.Id">@r.Nome</option> }
+      </select>
+    </div>
+    <div class="form-actions"><button class="btn" @onclick="Criar">Criar Lote</button></div>
+  </div>
+</div>
+
+@code {
+  List<ViveiroEscolar.Library.Domain.Entities.LoteMudas> lotes = new();
+  List<Especie> especies = new();
+  List<Canteiro> canteiros = new();
+  List<Responsavel> responsaveis = new();
+  Guid? especieId; Guid? canteiroId; int quantidadeInicial = 0; DateTime dataPlantio = DateTime.Today; Guid? responsavelId;
+  string error = string.Empty; string success = string.Empty;
+
+  protected override void OnInitialized()
+  {
+    Load();
+  }
+  void Load()
+  {
+    lotes = Service.ListarLotes().ToList();
+    especies = Service.ListarEspecies().ToList();
+    canteiros = Service.ListarCanteiros().ToList();
+    responsaveis = Service.ListarResponsaveis().ToList();
+  }
+
+  void Criar()
+  {
+    try
+    {
+      if (especieId == null || canteiroId == null) { error = "Selecione espécie e canteiro."; return; }
+      Service.CriarLote(Guid.NewGuid(), especieId.Value, canteiroId.Value, quantidadeInicial, dataPlantio, responsavelId);
+      error = string.Empty; success = "Lote criado."; Load();
+    }
+    catch (DomainException ex) { error = ex.Message; success = string.Empty; }
+  }
+}
