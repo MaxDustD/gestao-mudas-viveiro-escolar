@@ -1,6 +1,6 @@
 # Projeto Viveiro Escolar
 
-Autor: MaxDustD
+Autor: Nilseo Cassol
 
 ## Índice
 
