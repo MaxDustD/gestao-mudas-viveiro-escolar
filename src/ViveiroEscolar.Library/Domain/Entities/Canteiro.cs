@@ -13,14 +13,14 @@ public sealed class Canteiro
     public Canteiro(Guid id, string nome, string? descricao = null, string? localizacao = null)
     {
         Id = id == Guid.Empty ? throw new DomainException("Canteiro deve possuir um identificador válido.") : id;
-        Nome = ValidarTexto(nome, nameof(nome));
+        Nome = ValidarTexto(nome, "Nome");
         Descricao = descricao?.Trim();
         Localizacao = localizacao?.Trim();
     }
 
     public void AtualizarNome(string nome)
     {
-        Nome = ValidarTexto(nome, nameof(nome));
+        Nome = ValidarTexto(nome, "Nome");
     }
 
     public void AtualizarDescricao(string? descricao)

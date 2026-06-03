@@ -13,19 +13,19 @@ public sealed class Especie
     public Especie(Guid id, string nomeCientifico, string nomeComum, string? observacoes = null)
     {
         Id = id == Guid.Empty ? throw new DomainException("Especie deve possuir um identificador válido.") : id;
-        NomeCientifico = ValidarTexto(nomeCientifico, nameof(nomeCientifico));
-        NomeComum = ValidarTexto(nomeComum, nameof(nomeComum));
+        NomeCientifico = ValidarTexto(nomeCientifico, "Nome científico");
+        NomeComum = ValidarTexto(nomeComum, "Nome comum");
         Observacoes = observacoes?.Trim();
     }
 
     public void AtualizarNomeCientifico(string nomeCientifico)
     {
-        NomeCientifico = ValidarTexto(nomeCientifico, nameof(nomeCientifico));
+        NomeCientifico = ValidarTexto(nomeCientifico, "Nome científico");
     }
 
     public void AtualizarNomeComum(string nomeComum)
     {
-        NomeComum = ValidarTexto(nomeComum, nameof(nomeComum));
+        NomeComum = ValidarTexto(nomeComum, "Nome comum");
     }
 
     public void AtualizarObservacoes(string? observacoes)

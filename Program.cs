@@ -60,10 +60,10 @@ public class ConsoleMenuService
                     break;
                 case "0":
                     executando = false;
-                    Console.WriteLine("\nAté logo!");
+                    Console.WriteLine("\nAt� logo!");
                     break;
                 default:
-                    Console.WriteLine("\nOpção inválida. Tente novamente.");
+                    Console.WriteLine("\nOp��o inv�lida. Tente novamente.");
                     break;
             }
 
@@ -79,16 +79,16 @@ public class ConsoleMenuService
     private void ExibirMenuPrincipal()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  SISTEMA DE CONTROLE DE VIVEIRO ESCOLAR║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
-        Console.WriteLine("\n1 - Espécies");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  SISTEMA DE CONTROLE DE VIVEIRO ESCOLAR�");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("\n1 - Esp�cies");
         Console.WriteLine("2 - Canteiros");
-        Console.WriteLine("3 - Responsáveis");
+        Console.WriteLine("3 - Respons�veis");
         Console.WriteLine("4 - Lotes");
         Console.WriteLine("5 - Consultas");
         Console.WriteLine("0 - Sair");
-        Console.Write("\nEscolha uma opção: ");
+        Console.Write("\nEscolha uma op��o: ");
     }
 
     private void MenuEspecies()
@@ -98,13 +98,13 @@ public class ConsoleMenuService
         while (!voltarAoMenu)
         {
             Console.Clear();
-            Console.WriteLine("╔════════════════════════════════════════╗");
-            Console.WriteLine("║  MENU DE ESPÉCIES                      ║");
-            Console.WriteLine("╚════════════════════════════════════════╝");
-            Console.WriteLine("\n1 - Cadastrar espécie");
-            Console.WriteLine("2 - Listar espécies");
+            Console.WriteLine("+----------------------------------------+");
+            Console.WriteLine("�  MENU DE ESP�CIES                      �");
+            Console.WriteLine("+----------------------------------------+");
+            Console.WriteLine("\n1 - Cadastrar esp�cie");
+            Console.WriteLine("2 - Listar esp�cies");
             Console.WriteLine("0 - Voltar ao menu principal");
-            Console.Write("\nEscolha uma opção: ");
+            Console.Write("\nEscolha uma op��o: ");
 
             var opcao = Console.ReadLine() ?? "0";
 
@@ -120,7 +120,7 @@ public class ConsoleMenuService
                     voltarAoMenu = true;
                     break;
                 default:
-                    Console.WriteLine("\nOpção inválida. Tente novamente.");
+                    Console.WriteLine("\nOp��o inv�lida. Tente novamente.");
                     break;
             }
 
@@ -139,13 +139,13 @@ public class ConsoleMenuService
         while (!voltarAoMenu)
         {
             Console.Clear();
-            Console.WriteLine("╔════════════════════════════════════════╗");
-            Console.WriteLine("║  GERENCIAR CANTEIROS                    ║");
-            Console.WriteLine("╚════════════════════════════════════════╝");
+            Console.WriteLine("+----------------------------------------+");
+            Console.WriteLine("�  GERENCIAR CANTEIROS                    �");
+            Console.WriteLine("+----------------------------------------+");
             Console.WriteLine("\n1 - Listar Canteiros");
             Console.WriteLine("2 - Criar Novo Canteiro");
             Console.WriteLine("0 - Voltar ao menu principal");
-            Console.Write("\nEscolha uma opção: ");
+            Console.Write("\nEscolha uma op��o: ");
 
             var opcao = Console.ReadLine() ?? "0";
 
@@ -161,7 +161,7 @@ public class ConsoleMenuService
                     voltarAoMenu = true;
                     break;
                 default:
-                    Console.WriteLine("\nOpção inválida. Tente novamente.");
+                    Console.WriteLine("\nOp��o inv�lida. Tente novamente.");
                     break;
             }
 
@@ -180,13 +180,13 @@ public class ConsoleMenuService
         while (!voltarAoMenu)
         {
             Console.Clear();
-            Console.WriteLine("╔════════════════════════════════════════╗");
-            Console.WriteLine("║  GERENCIAR RESPONSÁVEIS                ║");
-            Console.WriteLine("╚════════════════════════════════════════╝");
-            Console.WriteLine("\n1 - Listar Responsáveis");
-            Console.WriteLine("2 - Criar Novo Responsável");
+            Console.WriteLine("+----------------------------------------+");
+            Console.WriteLine("�  GERENCIAR RESPONS�VEIS                �");
+            Console.WriteLine("+----------------------------------------+");
+            Console.WriteLine("\n1 - Listar Respons�veis");
+            Console.WriteLine("2 - Criar Novo Respons�vel");
             Console.WriteLine("0 - Voltar ao menu principal");
-            Console.Write("\nEscolha uma opção: ");
+            Console.Write("\nEscolha uma op��o: ");
 
             var opcao = Console.ReadLine() ?? "0";
 
@@ -202,7 +202,7 @@ public class ConsoleMenuService
                     voltarAoMenu = true;
                     break;
                 default:
-                    Console.WriteLine("\nOpção inválida. Tente novamente.");
+                    Console.WriteLine("\nOp��o inv�lida. Tente novamente.");
                     break;
             }
 
@@ -221,16 +221,16 @@ public class ConsoleMenuService
         while (!voltarAoMenu)
         {
             Console.Clear();
-            Console.WriteLine("╔════════════════════════════════════════╗");
-            Console.WriteLine("║  GERENCIAR LOTES                       ║");
-            Console.WriteLine("╚════════════════════════════════════════╝");
+            Console.WriteLine("+----------------------------------------+");
+            Console.WriteLine("�  GERENCIAR LOTES                       �");
+            Console.WriteLine("+----------------------------------------+");
             Console.WriteLine("\n1 - Criar lote");
             Console.WriteLine("2 - Registrar cuidado");
             Console.WriteLine("3 - Registrar retirada");
             Console.WriteLine("4 - Encerrar lote");
             Console.WriteLine("5 - Listar lotes");
             Console.WriteLine("0 - Voltar ao menu principal");
-            Console.Write("\nEscolha uma opção: ");
+            Console.Write("\nEscolha uma op��o: ");
 
             var opcao = Console.ReadLine() ?? "0";
 
@@ -255,7 +255,7 @@ public class ConsoleMenuService
                     voltarAoMenu = true;
                     break;
                 default:
-                    Console.WriteLine("\nOpção inválida. Tente novamente.");
+                    Console.WriteLine("\nOp��o inv�lida. Tente novamente.");
                     break;
             }
 
@@ -274,13 +274,13 @@ public class ConsoleMenuService
         while (!voltarAoMenu)
         {
             Console.Clear();
-            Console.WriteLine("╔════════════════════════════════════════╗");
-            Console.WriteLine("║  CONSULTAS                             ║");
-            Console.WriteLine("╚════════════════════════════════════════╝");
-            Console.WriteLine("\n1 - Disponibilidade por espécie");
+            Console.WriteLine("+----------------------------------------+");
+            Console.WriteLine("�  CONSULTAS                             �");
+            Console.WriteLine("+----------------------------------------+");
+            Console.WriteLine("\n1 - Disponibilidade por esp�cie");
             Console.WriteLine("2 - Lotes ativos");
             Console.WriteLine("0 - Voltar ao menu principal");
-            Console.Write("\nEscolha uma opção: ");
+            Console.Write("\nEscolha uma op��o: ");
 
             var opcao = Console.ReadLine() ?? "0";
 
@@ -296,7 +296,7 @@ public class ConsoleMenuService
                     voltarAoMenu = true;
                     break;
                 default:
-                    Console.WriteLine("\nOpção inválida. Tente novamente.");
+                    Console.WriteLine("\nOp��o inv�lida. Tente novamente.");
                     break;
             }
 
@@ -311,21 +311,21 @@ public class ConsoleMenuService
     private void CadastrarEspecie()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  CADASTRAR ESPÉCIE                     ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  CADASTRAR ESP�CIE                     �");
+        Console.WriteLine("+----------------------------------------+");
 
-        Console.Write("\nNome científico: ");
+        Console.Write("\nNome cient�fico: ");
         var nomeCientifico = Console.ReadLine() ?? string.Empty;
         Console.Write("Nome comum: ");
         var nomeComum = Console.ReadLine() ?? string.Empty;
-        Console.Write("Observações (opcional): ");
+        Console.Write("Observa��es (opcional): ");
         var observacoes = Console.ReadLine();
 
         try
         {
             _service.AdicionarEspecie(new Especie(Guid.NewGuid(), nomeCientifico, nomeComum, string.IsNullOrWhiteSpace(observacoes) ? null : observacoes));
-            Console.WriteLine($"\n✓ Espécie '{nomeComum}' cadastrada com sucesso!");
+            Console.WriteLine($"\n? Esp�cie '{nomeComum}' cadastrada com sucesso!");
         }
         catch (DomainException e)
         {
@@ -336,14 +336,14 @@ public class ConsoleMenuService
     private void ListarEspecies()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  ESPÉCIES CADASTRADAS                   ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  ESP�CIES CADASTRADAS                   �");
+        Console.WriteLine("+----------------------------------------+");
 
         var especies = _service.ListarEspecies().ToList();
         if (!especies.Any())
         {
-            Console.WriteLine("\nNenhuma espécie cadastrada.");
+            Console.WriteLine("\nNenhuma esp�cie cadastrada.");
             return;
         }
 
@@ -351,29 +351,29 @@ public class ConsoleMenuService
         {
             Console.WriteLine($"\nID: {especie.Id}");
             Console.WriteLine($"Nome comum: {especie.NomeComum}");
-            Console.WriteLine($"Nome científico: {especie.NomeCientifico}");
-            Console.WriteLine($"Observações: {especie.Observacoes ?? "-"}");
+            Console.WriteLine($"Nome cient�fico: {especie.NomeCientifico}");
+            Console.WriteLine($"Observa��es: {especie.Observacoes ?? "-"}");
         }
     }
 
     private void CriarCanteiro()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  CRIAR NOVO CANTEIRO                   ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  CRIAR NOVO CANTEIRO                   �");
+        Console.WriteLine("+----------------------------------------+");
 
         Console.Write("\nNome do canteiro: ");
         var nome = Console.ReadLine() ?? string.Empty;
-        Console.Write("Descrição (opcional): ");
+        Console.Write("Descri��o (opcional): ");
         var descricao = Console.ReadLine();
-        Console.Write("Localização (opcional): ");
+        Console.Write("Localiza��o (opcional): ");
         var localizacao = Console.ReadLine();
 
         try
         {
             _service.AdicionarCanteiro(new Canteiro(Guid.NewGuid(), nome, string.IsNullOrWhiteSpace(descricao) ? null : descricao, string.IsNullOrWhiteSpace(localizacao) ? null : localizacao));
-            Console.WriteLine($"\n✓ Canteiro '{nome}' criado com sucesso!");
+            Console.WriteLine($"\n? Canteiro '{nome}' criado com sucesso!");
         }
         catch (DomainException e)
         {
@@ -384,9 +384,9 @@ public class ConsoleMenuService
     private void ListarCanteiros()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  CANTEIROS CADASTRADOS                  ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  CANTEIROS CADASTRADOS                  �");
+        Console.WriteLine("+----------------------------------------+");
 
         var canteiros = _service.ListarCanteiros().ToList();
         if (!canteiros.Any())
@@ -399,29 +399,29 @@ public class ConsoleMenuService
         {
             Console.WriteLine($"\nID: {canteiro.Id}");
             Console.WriteLine($"Nome: {canteiro.Nome}");
-            Console.WriteLine($"Descrição: {canteiro.Descricao ?? "-"}");
-            Console.WriteLine($"Localização: {canteiro.Localizacao ?? "-"}");
+            Console.WriteLine($"Descri��o: {canteiro.Descricao ?? "-"}");
+            Console.WriteLine($"Localiza��o: {canteiro.Localizacao ?? "-"}");
         }
     }
 
     private void CriarResponsavel()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  CRIAR NOVO RESPONSÁVEL                ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  CRIAR NOVO RESPONS�VEL                �");
+        Console.WriteLine("+----------------------------------------+");
 
         Console.Write("\nNome: ");
         var nome = Console.ReadLine() ?? string.Empty;
         Console.Write("Contato: ");
         var contato = Console.ReadLine() ?? string.Empty;
-        Console.Write("Função (opcional): ");
+        Console.Write("Fun��o (opcional): ");
         var funcao = Console.ReadLine();
 
         try
         {
             _service.AdicionarResponsavel(new Responsavel(Guid.NewGuid(), nome, contato, string.IsNullOrWhiteSpace(funcao) ? null : funcao));
-            Console.WriteLine($"\n✓ Responsável '{nome}' cadastrado com sucesso!");
+            Console.WriteLine($"\n? Respons�vel '{nome}' cadastrado com sucesso!");
         }
         catch (DomainException e)
         {
@@ -432,14 +432,14 @@ public class ConsoleMenuService
     private void ListarResponsaveis()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  RESPONSÁVEIS CADASTRADOS               ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  RESPONS�VEIS CADASTRADOS               �");
+        Console.WriteLine("+----------------------------------------+");
 
         var responsaveis = _service.ListarResponsaveis().ToList();
         if (!responsaveis.Any())
         {
-            Console.WriteLine("\nNenhum responsável cadastrado.");
+            Console.WriteLine("\nNenhum respons�vel cadastrado.");
             return;
         }
 
@@ -448,16 +448,16 @@ public class ConsoleMenuService
             Console.WriteLine($"\nID: {responsavel.Id}");
             Console.WriteLine($"Nome: {responsavel.Nome}");
             Console.WriteLine($"Contato: {responsavel.Contato}");
-            Console.WriteLine($"Função: {responsavel.Funcao ?? "-"}");
+            Console.WriteLine($"Fun��o: {responsavel.Funcao ?? "-"}");
         }
     }
 
     private void CriarLote()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  CRIAR LOTE                             ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  CRIAR LOTE                             �");
+        Console.WriteLine("+----------------------------------------+");
 
         if (!SelecionarEspecie(out var especieId))
             return;
@@ -468,7 +468,7 @@ public class ConsoleMenuService
         Console.Write("\nQuantidade inicial: ");
         if (!int.TryParse(Console.ReadLine(), out var quantidadeInicial))
         {
-            Console.WriteLine("Quantidade inválida.");
+            Console.WriteLine("Quantidade inv�lida.");
             return;
         }
 
@@ -480,7 +480,7 @@ public class ConsoleMenuService
         try
         {
             _service.CriarLote(Guid.NewGuid(), especieId, canteiroId, quantidadeInicial, dataPlantio, responsavelId);
-            Console.WriteLine("\n✓ Lote criado com sucesso!");
+            Console.WriteLine("\n? Lote criado com sucesso!");
         }
         catch (DomainException e)
         {
@@ -491,16 +491,16 @@ public class ConsoleMenuService
     private void RegistrarCuidado()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  REGISTRAR CUIDADO                      ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  REGISTRAR CUIDADO                      �");
+        Console.WriteLine("+----------------------------------------+");
 
         if (!SelecionarLote(out var lote))
             return;
 
         Console.Write("\nTipo de cuidado: ");
         var tipo = Console.ReadLine() ?? string.Empty;
-        Console.Write("Descrição do cuidado: ");
+        Console.Write("Descri��o do cuidado: ");
         var descricao = Console.ReadLine() ?? string.Empty;
         Console.Write("Data do cuidado (YYYY-MM-DD): ");
         var data = DateTime.TryParse(Console.ReadLine(), out var dataCuidado) ? dataCuidado : DateTime.Today;
@@ -509,7 +509,7 @@ public class ConsoleMenuService
         {
             var responsavelId = SelecionarResponsavelObrigatorio();
             _service.RegistrarCuidado(lote.Id, new Cuidado(Guid.NewGuid(), lote.Id, data, tipo, descricao, responsavelId));
-            Console.WriteLine("\n✓ Cuidado registrado com sucesso!");
+            Console.WriteLine("\n? Cuidado registrado com sucesso!");
         }
         catch (DomainException e)
         {
@@ -520,9 +520,9 @@ public class ConsoleMenuService
     private void RegistrarRetirada()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  REGISTRAR RETIRADA                     ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  REGISTRAR RETIRADA                     �");
+        Console.WriteLine("+----------------------------------------+");
 
         if (!SelecionarLote(out var lote))
             return;
@@ -530,7 +530,7 @@ public class ConsoleMenuService
         Console.Write("\nQuantidade retirada: ");
         if (!int.TryParse(Console.ReadLine(), out var quantidade))
         {
-            Console.WriteLine("Quantidade inválida.");
+            Console.WriteLine("Quantidade inv�lida.");
             return;
         }
 
@@ -538,13 +538,13 @@ public class ConsoleMenuService
         var motivo = Console.ReadLine() ?? string.Empty;
         var destino = LerDestino();
         var responsavelId = SelecionarResponsavelObrigatorio();
-        Console.Write("Observações (opcional): ");
+        Console.Write("Observa��es (opcional): ");
         var observacoes = Console.ReadLine();
 
         try
         {
             _service.RegistrarRetirada(lote.Id, new Retirada(Guid.NewGuid(), lote.Id, DateTime.Now, quantidade, motivo, destino, responsavelId, string.IsNullOrWhiteSpace(observacoes) ? null : observacoes));
-            Console.WriteLine("\n✓ Retirada registrada com sucesso!");
+            Console.WriteLine("\n? Retirada registrada com sucesso!");
         }
         catch (DomainException e)
         {
@@ -555,9 +555,9 @@ public class ConsoleMenuService
     private void EncerrarLote()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  ENCERRAR LOTE                          ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  ENCERRAR LOTE                          �");
+        Console.WriteLine("+----------------------------------------+");
 
         if (!SelecionarLote(out var lote))
             return;
@@ -565,14 +565,14 @@ public class ConsoleMenuService
         string? justificativa = null;
         if (lote.QuantidadeDisponivel > 0)
         {
-            Console.Write("Justificativa (obrigatório se houver mudas disponíveis): ");
+            Console.Write("Justificativa (obrigat�rio se houver mudas dispon�veis): ");
             justificativa = Console.ReadLine();
         }
 
         try
         {
             _service.EncerrarLote(lote.Id, justificativa);
-            Console.WriteLine("\n✓ Lote encerrado com sucesso!");
+            Console.WriteLine("\n? Lote encerrado com sucesso!");
         }
         catch (DomainException e)
         {
@@ -583,9 +583,9 @@ public class ConsoleMenuService
     private void ListarLotes()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  LOTES CADASTRADOS                      ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  LOTES CADASTRADOS                      �");
+        Console.WriteLine("+----------------------------------------+");
 
         var lotes = _service.ListarLotes().ToList();
         if (!lotes.Any())
@@ -597,10 +597,10 @@ public class ConsoleMenuService
         foreach (var lote in lotes)
         {
             Console.WriteLine($"\nID: {lote.Id}");
-            Console.WriteLine($"Espécie: {lote.EspecieId}");
+            Console.WriteLine($"Esp�cie: {lote.EspecieId}");
             Console.WriteLine($"Canteiro: {lote.CanteiroId}");
             Console.WriteLine($"Inicial: {lote.QuantidadeInicial}");
-            Console.WriteLine($"Disponível: {lote.QuantidadeDisponivel}");
+            Console.WriteLine($"Dispon�vel: {lote.QuantidadeDisponivel}");
             Console.WriteLine($"Status: {lote.Status}");
         }
     }
@@ -608,29 +608,29 @@ public class ConsoleMenuService
     private void ConsultarDisponibilidade()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  DISPONIBILIDADE POR ESPÉCIE           ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  DISPONIBILIDADE POR ESP�CIE           �");
+        Console.WriteLine("+----------------------------------------+");
 
         var disponibilidade = _service.ConsultarDisponibilidadePorEspecie().ToList();
         if (!disponibilidade.Any())
         {
-            Console.WriteLine("\nNenhuma espécie cadastrada.");
+            Console.WriteLine("\nNenhuma esp�cie cadastrada.");
             return;
         }
 
         foreach (var item in disponibilidade)
         {
-            Console.WriteLine($"\n{item.NomeComum} ({item.NomeCientifico}) - Disponível: {item.QuantidadeDisponivel}");
+            Console.WriteLine($"\n{item.NomeComum} ({item.NomeCientifico}) - Dispon�vel: {item.QuantidadeDisponivel}");
         }
     }
 
     private void ListarLotesAtivos()
     {
         Console.Clear();
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║  LOTES ATIVOS                           ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+        Console.WriteLine("+----------------------------------------+");
+        Console.WriteLine("�  LOTES ATIVOS                           �");
+        Console.WriteLine("+----------------------------------------+");
 
         var lotes = _service.ListarLotesAtivos().ToList();
         if (!lotes.Any())
@@ -642,9 +642,9 @@ public class ConsoleMenuService
         foreach (var lote in lotes)
         {
             Console.WriteLine($"\nID: {lote.Id}");
-            Console.WriteLine($"Espécie: {lote.EspecieId}");
+            Console.WriteLine($"Esp�cie: {lote.EspecieId}");
             Console.WriteLine($"Canteiro: {lote.CanteiroId}");
-            Console.WriteLine($"Disponível: {lote.QuantidadeDisponivel}");
+            Console.WriteLine($"Dispon�vel: {lote.QuantidadeDisponivel}");
         }
     }
 
@@ -653,7 +653,7 @@ public class ConsoleMenuService
         var especies = _service.ListarEspecies().ToArray();
         if (!especies.Any())
         {
-            Console.WriteLine("\nNenhuma espécie cadastrada.");
+            Console.WriteLine("\nNenhuma esp�cie cadastrada.");
             id = Guid.Empty;
             return false;
         }
@@ -663,10 +663,10 @@ public class ConsoleMenuService
             Console.WriteLine($"{i + 1} - {especies[i].NomeComum} ({especies[i].NomeCientifico})");
         }
 
-        Console.Write("\nEscolha uma opção: ");
+        Console.Write("\nEscolha uma op��o: ");
         if (!int.TryParse(Console.ReadLine(), out var escolha) || escolha < 1 || escolha > especies.Length)
         {
-            Console.WriteLine("Opção inválida.");
+            Console.WriteLine("Op��o inv�lida.");
             id = Guid.Empty;
             return false;
         }
@@ -690,10 +690,10 @@ public class ConsoleMenuService
             Console.WriteLine($"{i + 1} - {canteiros[i].Nome}");
         }
 
-        Console.Write("\nEscolha uma opção: ");
+        Console.Write("\nEscolha uma op��o: ");
         if (!int.TryParse(Console.ReadLine(), out var escolha) || escolha < 1 || escolha > canteiros.Length)
         {
-            Console.WriteLine("Opção inválida.");
+            Console.WriteLine("Op��o inv�lida.");
             id = Guid.Empty;
             return false;
         }
@@ -714,13 +714,13 @@ public class ConsoleMenuService
 
         for (var i = 0; i < lotes.Length; i++)
         {
-            Console.WriteLine($"{i + 1} - {lotes[i].Id} | Disponível: {lotes[i].QuantidadeDisponivel} | {lotes[i].Status}");
+            Console.WriteLine($"{i + 1} - {lotes[i].Id} | Dispon�vel: {lotes[i].QuantidadeDisponivel} | {lotes[i].Status}");
         }
 
-        Console.Write("\nEscolha uma opção: ");
+        Console.Write("\nEscolha uma op��o: ");
         if (!int.TryParse(Console.ReadLine(), out var escolha) || escolha < 1 || escolha > lotes.Length)
         {
-            Console.WriteLine("Opção inválida.");
+            Console.WriteLine("Op��o inv�lida.");
             lote = null!;
             return false;
         }
@@ -734,7 +734,7 @@ public class ConsoleMenuService
         var responsaveis = _service.ListarResponsaveis().ToArray();
         if (!responsaveis.Any())
         {
-            throw new DomainException("É necessário cadastrar ao menos um responsável antes de prosseguir.");
+            throw new DomainException("� necess�rio cadastrar ao menos um respons�vel antes de prosseguir.");
         }
 
         for (var i = 0; i < responsaveis.Length; i++)
@@ -742,10 +742,10 @@ public class ConsoleMenuService
             Console.WriteLine($"{i + 1} - {responsaveis[i].Nome} - {responsaveis[i].Contato}");
         }
 
-        Console.Write("\nEscolha uma opção: ");
+        Console.Write("\nEscolha uma op��o: ");
         if (!int.TryParse(Console.ReadLine(), out var escolha) || escolha < 1 || escolha > responsaveis.Length)
         {
-            throw new DomainException("Responsável inválido.");
+            throw new DomainException("Respons�vel inv�lido.");
         }
 
         return responsaveis[escolha - 1].Id;
@@ -759,16 +759,16 @@ public class ConsoleMenuService
             return null;
         }
 
-        Console.WriteLine("\n0 - Nenhum responsável");
+        Console.WriteLine("\n0 - Nenhum respons�vel");
         for (var i = 0; i < responsaveis.Length; i++)
         {
             Console.WriteLine($"{i + 1} - {responsaveis[i].Nome}");
         }
 
-        Console.Write("\nEscolha uma opção: ");
+        Console.Write("\nEscolha uma op��o: ");
         if (!int.TryParse(Console.ReadLine(), out var escolha) || escolha < 0 || escolha > responsaveis.Length)
         {
-            Console.WriteLine("Opção inválida. Nenhum responsável atribuído.");
+            Console.WriteLine("Op��o inv�lida. Nenhum respons�vel atribu�do.");
             return null;
         }
 
@@ -780,10 +780,10 @@ public class ConsoleMenuService
 
     private DestinoRetirada LerDestino()
     {
-        Console.WriteLine("\n1 - Doação");
+        Console.WriteLine("\n1 - Doa��o");
         Console.WriteLine("2 - Plantio");
         Console.WriteLine("3 - Outro");
-        Console.Write("\nEscolha uma opção: ");
+        Console.Write("\nEscolha uma op��o: ");
 
         var opcao = Console.ReadLine() ?? "3";
         return opcao switch

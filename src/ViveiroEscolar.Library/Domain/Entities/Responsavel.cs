@@ -13,19 +13,19 @@ public sealed class Responsavel
     public Responsavel(Guid id, string nome, string contato, string? funcao = null)
     {
         Id = id == Guid.Empty ? throw new DomainException("Responsável deve possuir um identificador válido.") : id;
-        Nome = ValidarTexto(nome, nameof(nome));
-        Contato = ValidarTexto(contato, nameof(contato));
+        Nome = ValidarTexto(nome, "Nome");
+        Contato = ValidarTexto(contato, "Contato");
         Funcao = funcao?.Trim();
     }
 
     public void AtualizarNome(string nome)
     {
-        Nome = ValidarTexto(nome, nameof(nome));
+        Nome = ValidarTexto(nome, "Nome");
     }
 
     public void AtualizarContato(string contato)
     {
-        Contato = ValidarTexto(contato, nameof(contato));
+        Contato = ValidarTexto(contato, "Contato");
     }
 
     public void AtualizarFuncao(string? funcao)

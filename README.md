@@ -170,6 +170,3 @@ dotnet dev-certs https --trust
 # roda watcher em portas alternativas
 #.\scripts\run-watch.ps1 -HttpPort 5005 -HttpsPort 5006
 ```
-
----
----
